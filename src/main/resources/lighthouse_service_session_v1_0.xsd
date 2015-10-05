@@ -1,0 +1,28 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://fortress/lighthouse/session/service/v1"
+           targetNamespace="http://fortress/lighthouse/session/service/v1" elementFormDefault="qualified">
+
+    <xs:element name="getSessionRequest">
+        <xs:complexType>
+            <xs:sequence>
+				<xs:element name="deviceId" type="tns:deviceId"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getSessionResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="sessionId" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="deviceId">
+		<xs:sequence>
+			<xs:element name="imei" type="xs:string"/>
+			<xs:element name="cdma" type="xs:string"/>
+			<xs:element name="androidId" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+
+</xs:schema>
